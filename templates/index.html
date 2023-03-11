@@ -6,24 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/app.css">
 </head>
 
 <body>
-    <form action="">
-        <label for="word">guess word</label>
-        <input type="text" name="word" id="word">
-        <button type="submit">Submit</button>
-    </form>
-    <table>
-        {% for row in table %}
-        <tr>
-            {% for letter in row %}
-            <td>{{letter}}</td>
-            {% endfor %}
-        </tr>
-        {% endfor %}
-    </table>
+    <header class=" bg-dark text-light">
+        <h1 class="text-center ">BOGGLE!</h1>
+        <div class="d-flex justify-content-between flex-column sm-flex-row">
+            <button id="start">Start!</button>
+            <div id="high-score">High Score {{max_score}}</div>
+            <div id="times-played">Times Played {{times_played}}</div>
+        </div>
+    </header>
 
+
+    <div class="body-section">
+        <div class="game-card hidden">
+            <div id="timer-display"></div>
+            <div class=" board section">
+
+                <div id="" class="">
+                    <div class=""></div>
+                    <form class="" action="">
+                        <label for="word">guess word</label>
+                        <input type="text" name="word" id="word">
+                        <button id="submit">Submit</button>
+                    </form>
+                    <!-- <button id="submit">Submit</button> -->
+                    <table class="">
+                        {% for row in table %}
+                        <tr>
+                            {% for letter in row %}
+                            <td>{{letter}}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </table>
+
+                    <div id="score">Score: 0</div>
+                </div>
+
+                <div id="your-score"></div>
+
+            </div>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.js"></script>
